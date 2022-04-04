@@ -1,0 +1,11 @@
+span {
+    color: cadetblue;
+    font-weight: bold;
+}
+
+img {
+    width: 80px;
+    height: 80px;
+    border: 5px solid darkcyan;
+    border-radius: 100px;
+}
