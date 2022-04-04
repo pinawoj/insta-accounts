@@ -9,7 +9,7 @@
 <h1>Instagram Account</h1>
 <div>
     <img th:src="${account.getProfilePhoto()}" alt="profile photo"/>
-    <p>
+    <p class="centre">
         Account: <span th:text="${account.getAccountName()}"></span><br>
         User: <span th:text="${account.getUserName()}"></span><br>
         Posts: <span th:text="${account.getPostCount()}"></span><br>

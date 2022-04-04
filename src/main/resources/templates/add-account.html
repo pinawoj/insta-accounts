@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Account</title>
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+<body>
+<h1>Add new account</h1>
+<div>
+    <form th:action="@{/api/accounts/add-account}" th:object="${newAccount}" method="post">
+        <img src="../../img/profile_photo.jpg" alt="profile photo"/>
+        <ul>
+            <li>
+                <label for="account-name">Account:</label>
+                <input type="text" id="account-name" placeholder="Account" th:field="*{accountName}"><br>
+            </li>
+            <li>
+                <label for="user-name">User:</label>
+                <input type="text" id="user-name" placeholder="Your name" th:field="*{userName}"><br>
+            </li>
+            <li>
+                <label for="image">Photo:</label>
+                <input type="text" id="image" placeholder="Upload profile photo" th:field="*{profilePhoto}"><br>
+            </li>
+            <li>
+                <button type="submit" class="button">Submit</button>
+            </li>
+        </ul>
+    </form>
+</div>
+</body>
+</html>

@@ -18,14 +18,6 @@ public class AccountsRepository {
         return accounts;
     }
 
-    public InstaAccount getAccount(String accountName) {
-        InstaAccount account = new InstaAccount();
-        if (getRepository().containsKey(accountName)) {
-            account = accounts.get(accountName);
-        }
-        return account;
-    }
-
     private void fillAccountRepositoryWithDefaults() {
         //TODO read accounts from json file
         InstaAccount account1 = new InstaAccount();
