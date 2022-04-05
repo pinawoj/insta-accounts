@@ -7,9 +7,17 @@
 </head>
 <body>
 <h1>Instagram Accounts</h1>
+<div>
+    <ul id="menu">
+        <li><a class="link-button" href="/api/accounts/add-account">New account</a></li>
+        <li><a class="link-button" href="/api/accounts/login">Login</a></li>
+    </ul>
+</div>
 <div th:each="account: ${accounts}">
-    <img th:src="${account.getProfilePhoto()}" alt="profile photo"/>
     <p class="centre">
+        <a th:href="@{/api/accounts/{account}(account=${account.getAccountName()})}">
+            <img th:src="${account.getProfilePhoto()}" alt="profile photo"/>
+        </a>
         Account: <span th:text="${account.getAccountName()}"></span><br>
         User: <span th:text="${account.getUserName()}"></span><br>
         Posts: <span th:text="${account.getPostCount()}"></span><br>

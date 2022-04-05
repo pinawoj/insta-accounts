@@ -8,8 +8,15 @@
 <body>
 <h1>Instagram Account</h1>
 <div>
-    <img th:src="${account.getProfilePhoto()}" alt="profile photo"/>
+    <ul id="menu">
+        <li><a class="link-button" href="/api/accounts">Back</a></li>
+        <li><a class="link-button" href="/api/accounts/add-account">New account</a></li>
+        <li><a class="link-button" href="/api/accounts/login">Login</a></li>
+    </ul>
+</div>
+<div>
     <p class="centre">
+        <img class="profile-img" th:src="${account.getProfilePhoto()}" alt="profile photo"/>
         Account: <span th:text="${account.getAccountName()}"></span><br>
         User: <span th:text="${account.getUserName()}"></span><br>
         Posts: <span th:text="${account.getPostCount()}"></span><br>
