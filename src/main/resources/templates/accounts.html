@@ -2,8 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="View Instagram analytics and statistics and track accounts progress">
+    <meta name="keywords" content="Instagram statistics, Instagram analytics">
     <title>InstaAccounts</title>
-    <link rel="stylesheet" href="../../styles.css">
+    <link rel="stylesheet" th:href="@{~/css/styles.css}">
+    <link rel="stylesheet" th:href="@{~/css/bootstrap.min.css}">
 </head>
 <body>
 <h1>Instagram Accounts</h1>
@@ -25,5 +29,6 @@
         Following: <span th:text="${account.getFollowingCount()}"></span><br>
     </p>
 </div>
+<script th:src="@{~/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
