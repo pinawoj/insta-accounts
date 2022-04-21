@@ -3,32 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="View Instagram analytics and statistics and track accounts progress">
-    <meta name="keywords" content="Instagram statistics, Instagram analytics">
-    <title>InstaAccounts</title>
-    <link rel="stylesheet" th:href="@{~/css/styles.css}">
-    <link rel="stylesheet" th:href="@{~/css/bootstrap.min.css}">
+    <title>Insta Accounts</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<h1>Instagram Accounts</h1>
-<div>
-    <ul id="menu">
-        <li><a class="link-button" href="/api/accounts/add-account">New account</a></li>
-        <li><a class="link-button" href="/api/accounts/login">Login</a></li>
-    </ul>
+<div class="container-fluid">
+    <h1>Instagram Accounts</h1>
+    <div th:insert="fragments/general :: menu"></div>
+
+    <div th:each="account: ${accounts}">
+        <p class="centre">
+            <a th:href="@{/api/accounts/{account}(account=${account.getAccountName()})}">
+                <img th:src="@{${account.getProfilePhoto()}}" alt="profile photo"/>
+            </a>
+            Account: <span th:text="${account.getAccountName()}"></span><br>
+            User: <span th:text="${account.getUserName()}"></span><br>
+            Posts: <span th:text="${account.getPostCount()}"></span><br>
+            Followers: <span th:text="${account.getFollowersCount()}"></span><br>
+            Following: <span th:text="${account.getFollowingCount()}"></span><br>
+        </p>
+    </div>
 </div>
-<div th:each="account: ${accounts}">
-    <p class="centre">
-        <a th:href="@{/api/accounts/{account}(account=${account.getAccountName()})}">
-            <img th:src="${account.getProfilePhoto()}" alt="profile photo"/>
-        </a>
-        Account: <span th:text="${account.getAccountName()}"></span><br>
-        User: <span th:text="${account.getUserName()}"></span><br>
-        Posts: <span th:text="${account.getPostCount()}"></span><br>
-        Followers: <span th:text="${account.getFollowersCount()}"></span><br>
-        Following: <span th:text="${account.getFollowingCount()}"></span><br>
-    </p>
-</div>
-<script th:src="@{~/js/bootstrap.bundle.min.js}"></script>
+
+<div th:insert="fragments/general :: footer"></div>
+
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

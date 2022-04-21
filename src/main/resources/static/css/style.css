@@ -1,0 +1,64 @@
+body::before {
+    display: block;
+    content: "";
+    height: 70px;
+}
+
+@media (min-width: 768px) {
+    .account-input {
+        width: 50%;
+    }
+}
+
+.profile-img {
+    margin: 0 auto 20px;
+}
+
+.button {
+    display: block;
+    margin: 5px auto;
+}
+
+.centre {
+    background-color: #eec5e7;
+    width: 250px;
+    padding: 35px 10px 60px;
+    margin: 15px auto;
+    text-align: center;
+    border: 5px solid #ac31d9;
+    border-radius: 7px;
+}
+
+.centre a {
+    display: block;
+    width: 105px;
+    height: 105px;
+    margin: 0 auto 35px;
+    border-radius: 100px;
+}
+
+#menu {
+    list-style-type: none;
+    position: static;
+    text-align: center;
+}
+
+#menu li {
+    display: inline;
+}
+
+.link-button {
+    display: inline-block;
+    background-color: #5e1c79;
+    color: lavenderblush;
+    font-family: Serif;
+    font-weight: bold;
+    padding: 15px 25px;
+    text-decoration: none;
+    border: 4px solid #390f49;
+}
+
+.link-button:hover {
+    background-color: #8a4ca1;
+    color: lavenderblush;
+}

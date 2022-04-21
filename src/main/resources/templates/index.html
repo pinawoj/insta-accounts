@@ -2,9 +2,365 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>InstaStatistics</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="View Instagram analytics and statistics and track accounts progress">
+    <meta name="keywords" content="Instagram statistics, Instagram analytics">
+    <title>InstaAccounts</title>
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/style.css}">
 </head>
 <body>
-<p>Hello</p>
+<!-- ======= Header ======= -->
+<header th:insert="fragments/general :: menu"></header>
+
+<!-- ======= Hero ======= -->
+<section id="hero" class="bg-dark text-light p-5 pb-lg-0 text-center text-sm-start">
+    <div class="container">
+        <div class="d-sm-flex align-items-center justify-content-between">
+            <div>
+                <h1>In-Depth Analytics for <span class="text-primary">Instagram</span></h1>
+                <p class="lead my-4">
+                    We offer powerful in-depth analytics and actionable insights for brands, influencers and agencies.
+                    Trusted by millions since 2022.<br>
+                    Powered by the official Instagram API.
+                </p>
+                <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#signup">
+                    <i class="bi bi-chevron-right"></i> Sign Up For Free
+                </button>
+            </div>
+            <img class="img-fluid w-50 d-none d-sm-block" th:src="@{assets/img/loving_it.svg}" alt="Loving it">
+        </div>
+    </div>
+</section>
+
+<!-- ======= Search ======= -->
+<section id="search" class="bg-primary text-light p-5">
+    <div class="container">
+        <div class="d-md-flex align-items-center justify-content-between">
+            <h3 class="mb-3 mb-md-0">Search Account</h3>
+            <div class="input-group account-input">
+                <input type="text" class="form-control" placeholder="Enter Account">
+                <div class="input-group-append">
+                    <button class="btn btn-dark btn-lg" type="button">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= Boxes ======= -->
+<section id="boxes" class="p-5">
+    <div class="container">
+        <div class="row text-center g-4">
+            <div class="col-md">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <h3 class="card-title mb-3">Feature 1</h3>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa illo, incidunt mollitia
+                            nihil sunt totam?
+                        </p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card bg-secondary text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-person-square"></i>
+                        </div>
+                        <h3 class="card-title mb-3">Feature 2</h3>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa illo, incidunt mollitia
+                            nihil sunt totam?
+                        </p>
+                        <a href="#" class="btn btn-dark">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md">
+                <div class="card bg-dark text-light">
+                    <div class="card-body text-center">
+                        <div class="h1 mb-3">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h3 class="card-title mb-3">Feature 3</h3>
+                        <p class="card-text">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa illo, incidunt mollitia
+                            nihil sunt totam?
+                        </p>
+                        <a href="#" class="btn btn-primary">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= About ======= -->
+<section id="about" class="p-5 pb-lg-0 bg-primary">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md">
+                <img th:src="@{assets/img/profile_image.svg}" class="img-fluid" alt="Profile image">
+            </div>
+            <div class="col-md p-5">
+                <h3>About</h3>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eum fugiat inventore voluptatem.
+                    Exercitationem, repellendus.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur id labore magni nihil
+                    nobis numquam optio quisquam, voluptatum. Autem dolor ipsum itaque numquam quaerat quam quo, sint
+                    voluptas voluptates.
+                </p>
+                <a href="#" class="btn btn-light mt-3">
+                    <i class="bi bi-chevron-right"></i>Read More
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= Features ======= -->
+<section id="features" class="p-5 pb-lg-0 bg-dark text-light">
+    <div class="container">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-md p5">
+                <h3>Features</h3>
+                <p class="lead">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores eum fugiat inventore voluptatem.
+                    Exercitationem, repellendus.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur id labore magni nihil
+                    nobis numquam optio quisquam, voluptatum. Autem dolor ipsum itaque numquam quaerat quam quo, sint
+                    voluptas voluptates.
+                </p>
+                <a href="#" class="btn btn-light mt-3">
+                    <i class="bi bi-chevron-right"></i>Read More
+                </a>
+            </div>
+            <div class="col-md">
+                <img th:src="@{assets/img/upload_image.svg}" class="img-fluid" alt="Upload image">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= Questions ======= -->
+<section class="p-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Frequently Asked Questions</h2>
+        <div class="accordion accordion-flush" id="questions">
+            <!-- Question 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-one">
+                        Do I have to sign in to use this service?
+                    </button>
+                </h2>
+                <div id="question-one" class="accordion-collapse collapse" data-bs-parent="#questions">
+                    <div class="accordion-body">No, but you'll be missing some features that are only available for
+                        logged-in users. Logged-in users can select accounts to be tracked and shown in dashboard. They
+                        also have higher limits.
+                    </div>
+                </div>
+            </div>
+            <!-- Question 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-two">
+                        Do I have to sign in with Facebook?
+                    </button>
+                </h2>
+                <div id="question-two" class="accordion-collapse collapse" data-bs-parent="#questions">
+                    <div class="accordion-body">Not at the moment! You can just sign up with your email address. Soon
+                        you'll be able to sign in with Facebook and unlock much more insights.
+                    </div>
+                </div>
+            </div>
+            <!-- Question 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-three">
+                        Do I have to pay to use this service?
+                    </button>
+                </h2>
+                <div id="question-three" class="accordion-collapse collapse"
+                     data-bs-parent="#questions">
+                    <div class="accordion-body">No. You can create a free account to track your own account plus another
+                        account. You'll have access to a decent amount of insights. If you want to track more and access
+                        advanced insights, then you'll have to upgrade to the premium plan.
+                    </div>
+                </div>
+            </div>
+            <!-- Question 4 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-four">
+                        Do you offer a free trial?
+                    </button>
+                </h2>
+                <div id="question-four" class="accordion-collapse collapse"
+                     data-bs-parent="#questions">
+                    <div class="accordion-body">Yes. After creating your free account, you'll have 14 days to try almost
+                        all app premium features. No credit card is required.
+                    </div>
+                </div>
+            </div>
+            <!-- Question 5 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#question-five">
+                        Why I can't find my account?
+                    </button>
+                </h2>
+                <div id="question-five" class="accordion-collapse collapse"
+                     data-bs-parent="#questions">
+                    <div class="accordion-body">We can track any professional Instagram account. If your account
+                        is private or personal, then it can't be tracked by the Instagram official API used by us.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= Developers ======= -->
+<section id="developers" class="p-5 bg-primary">
+    <div class="container">
+        <h2 class="text-center text-white">Developers</h2>
+        <p class="lead text-center text-white mb-5">
+            Our best developers who are behind InstaAccounts
+        </p>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <img src="https://avatars.githubusercontent.com/u/9007609?v=4" class="rounded-circle w-50 mb-3"
+                             alt="Paulina Wojcik">
+                        <h3 class="card-title mb-3">Paulina Wójcik</h3>
+                        <p class="card-text">Java Developer</p>
+                        <a href="https://www.linkedin.com/in/wojcik-paulina/"><i
+                                class="bi bi-linkedin text-dark mx-1"></i></a>
+                        <a href="https://github.com/pinawoj"><i class="bi bi-github text-dark mx-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/11.jpg" class="rounded-circle mb-3"
+                             alt="Developer">
+                        <h3 class="card-title mb-3">Developer</h3>
+                        <p class="card-text">Java Developer</p>
+                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-github text-dark mx-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/women/11.jpg" class="rounded-circle mb-3"
+                             alt="Developer">
+                        <h3 class="card-title mb-3">Developerka</h3>
+                        <p class="card-text">Java Developer</p>
+                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-github text-dark mx-1"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <img src="https://randomuser.me/api/portraits/men/9.jpg" class="rounded-circle mb-3"
+                             alt="Developer">
+                        <h3 class="card-title mb-3">Developer</h3>
+                        <p class="card-text">Java Developer</p>
+                        <a href="#"><i class="bi bi-linkedin text-dark mx-1"></i></a>
+                        <a href="#"><i class="bi bi-github text-dark mx-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= Contact ======= -->
+<section class="p-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md">
+                <h2 class="text-center mb-4">Contact Info</h2>
+                <ul class="list-group list-group-flush lead">
+                    <li class="list-group-item">
+                        <span class="fw-bold">Main Location:</span> 80-000 Gdańsk, Poland
+                    </li>
+                    <li class="list-group-item">
+                        <span class="fw-bold">Phone:</span> (+48) 666-555-444
+                    </li>
+                    <li class="list-group-item">
+                        <span class="fw-bold">Email:</span> insta.accounts@insta.com
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ======= Footer ======= -->
+<footer th:insert="fragments/general :: footer"></footer>
+
+<!-- ======= Signup Modal ======= -->
+<div class="modal fade bg-secondary py-5" tabindex="-1" role="dialog" id="signup">
+    <div class="modal-dialog">
+        <div class="modal-content rounded-5 shadow">
+
+            <div class="modal-header p-5 pb-4 border-bottom-0">
+                <h2 class="fw-bold mb-0">Sign up for free</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-5 pt-0">
+                <form>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control rounded-4" id="email"
+                               placeholder="name@example.com">
+                        <label for="email">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control rounded-4" id="password"
+                               placeholder="Password">
+                        <label for="password">Password</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control rounded-4" id="repeatPassword"
+                               placeholder="Password">
+                        <label for="repeatPassword">Password</label>
+                    </div>
+                    <button class="w-100 mb-2 btn btn-lg rounded-4 btn-primary" type="submit">Sign up</button>
+                    <small class="text-muted">By clicking Sign up, you agree to the terms of use.</small>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script th:src="@{~/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>

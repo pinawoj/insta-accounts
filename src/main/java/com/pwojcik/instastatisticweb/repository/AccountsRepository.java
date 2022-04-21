@@ -23,7 +23,7 @@ public class AccountsRepository {
         InstaAccount account1 = new InstaAccount();
         account1.setAccountName("ameliawoj_");
         account1.setUserName("Amelia Wójcik");
-        account1.setProfilePhoto("../../img/profile_photo.jpg");
+        account1.setProfilePhoto("/assets/img/profile_photo.jpg");
         account1.setPostCount(167L);
         account1.setFollowersCount(3186L);
         account1.setFollowingCount(751L);
@@ -33,7 +33,7 @@ public class AccountsRepository {
         InstaAccount account2 = new InstaAccount();
         account2.setAccountName("pinawoj");
         account2.setUserName("Paulina Wójcik");
-        account2.setProfilePhoto("../../img/profile_photo.jpg");
+        account2.setProfilePhoto("/assets/img/profile_photo.jpg");
         account2.setPostCount(18L);
         account2.setFollowersCount(226L);
         account2.setFollowingCount(136L);
@@ -43,7 +43,7 @@ public class AccountsRepository {
         InstaAccount account3 = new InstaAccount();
         account3.setAccountName("paula_jagodzinska");
         account3.setUserName("Paula Jagodzińska");
-        account3.setProfilePhoto("../../img/profile_photo.jpg");
+        account3.setProfilePhoto("/assets/img/profile_photo.jpg");
         account3.setPostCount(5995L);
         account3.setFollowersCount(366000L);
         account3.setFollowingCount(104L);

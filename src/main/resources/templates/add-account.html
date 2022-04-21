@@ -3,20 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>Add Account</title>
-    <link rel="stylesheet" th:href="@{~/css/styles.css}">
-    <link rel="stylesheet" th:href="@{~/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
 <h1>Add new account</h1>
-<div>
-    <ul id="menu">
-        <li><a class="link-button" href="/api/accounts">Back</a></li>
-        <li><a class="link-button" href="/api/accounts/login">Login</a></li>
-    </ul>
-</div>
+<div th:insert="fragments/general :: menu"></div>
+
 <div>
     <form th:action="@{/api/accounts/add-account}" th:object="${newAccount}" method="post">
-        <img class="profile-img" th:src="@{~/img/profile_photo.jpg}" alt="profile photo"/>
+        <img class="profile-img" th:src="@{/img/profile_photo.jpg}" alt="profile photo"/>
         <ul>
             <li>
                 <label for="account-name">Account:</label>
@@ -36,6 +33,9 @@
         </ul>
     </form>
 </div>
-<script th:src="@{~/js/bootstrap.bundle.min.js}"></script>
+
+<div th:insert="fragments/general :: footer"></div>
+
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 </body>
 </html>
