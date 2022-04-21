@@ -3,30 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Insta Accounts</title>
+    <title>Top Accounts</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
     <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<div class="container-fluid">
-    <h1>Instagram Accounts</h1>
-    <div th:insert="fragments/general :: menu"></div>
+<!-- ======= Header ======= -->
+<div th:insert="fragments/general :: menu"></div>
 
-    <div th:each="account: ${accounts}">
-        <p class="centre">
-            <a th:href="@{/api/accounts/{account}(account=${account.getAccountName()})}">
-                <img th:src="@{${account.getProfilePhoto()}}" alt="profile photo"/>
-            </a>
-            Account: <span th:text="${account.getAccountName()}"></span><br>
-            User: <span th:text="${account.getUserName()}"></span><br>
-            Posts: <span th:text="${account.getPostCount()}"></span><br>
-            Followers: <span th:text="${account.getFollowersCount()}"></span><br>
-            Following: <span th:text="${account.getFollowingCount()}"></span><br>
-        </p>
+<!-- ======= Top Accounts ======= -->
+<section id="topAccounts" class="p-5 bg-primary">
+    <div class="container">
+        <h2 class="text-center text-white pb-5">Top Instagram Accounts</h2>
+        <div class="row g-4">
+            <div th:each="account: ${accounts}" class="col-md-6 col-lg-3">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <a th:href="@{/api/accounts/{account}(account=${account.getAccountName()})}">
+                            <img th:src="@{${account.getProfilePhoto()}}" class="rounded-circle w-75 mb-3"
+                                 alt="profile photo"/>
+                        </a>
+                        <h3 class="card-title mb-3" th:text="${account.getAccountName()}"></h3>
+                        <p class="card-text">
+                            User: <span th:text="${account.getUserName()}"></span><br>
+                            Posts: <span th:text="${account.getPostCount()}"></span><br>
+                            Followers: <span th:text="${account.getFollowersCount()}"></span><br>
+                            Following: <span th:text="${account.getFollowingCount()}"></span><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</div>
+</section>
 
+<!-- ======= Footer ======= -->
 <div th:insert="fragments/general :: footer"></div>
 
 <script th:src="@{/js/bootstrap.bundle.min.js}"></script>

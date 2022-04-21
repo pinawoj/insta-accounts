@@ -8,20 +8,37 @@
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<h1>Instagram Account</h1>
+<!-- ======= Header ======= -->
 <div th:insert="fragments/general :: menu"></div>
 
-<div>
-    <p class="centre">
-        <img class="profile-img" th:src="${account.getProfilePhoto()}" alt="profile photo"/>
-        Account: <span th:text="${account.getAccountName()}"></span><br>
-        User: <span th:text="${account.getUserName()}"></span><br>
-        Posts: <span th:text="${account.getPostCount()}"></span><br>
-        Followers: <span th:text="${account.getFollowersCount()}"></span><br>
-        Following: <span th:text="${account.getFollowingCount()}"></span><br>
-    </p>
-</div>
+<!-- ======= Instagram Account ======= -->
+<section id="account" class="p-5 bg-primary">
+    <div class="container">
+        <h2 class="text-center text-white pb-5">Instagram Account</h2>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card bg-light">
+                    <div class="card-body text-center">
+                        <img th:src="@{${account.getProfilePhoto()}}" class="rounded-circle w-75 mb-3"
+                             alt="profile photo"/>
+                        <h3 class="card-title mb-3" th:text="${account.getAccountName()}"></h3>
+                        <p class="card-text">
+                            User: <span th:text="${account.getUserName()}"></span><br>
+                            Posts: <span th:text="${account.getPostCount()}"></span><br>
+                            Followers: <span th:text="${account.getFollowersCount()}"></span><br>
+                            Following: <span th:text="${account.getFollowingCount()}"></span><br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-9">
+                <!-- Statistic Graphs -->
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- ======= Footer ======= -->
 <div th:insert="fragments/general :: footer"></div>
 
 <script th:src="@{/js/bootstrap.bundle.min.js}"></script>
